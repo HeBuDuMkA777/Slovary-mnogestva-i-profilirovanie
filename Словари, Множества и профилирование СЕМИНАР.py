@@ -112,7 +112,39 @@ else:
 print(result) """
 
 
+# Задача 4. Гистограмма частоты
+# Создайте программу для лингвистов, которая будет инвертировать полученный
+# словарь. То есть в качестве ключа будет частота, а в качестве значения —
+# список символов с этой частотой. Вам нужно реаллизовать:
+# 1. получить текст и создать из него оригинальный словарь частот;
+# 2. создать новый словарь и заполнить его данными из оригинального
+# словаря частот, используя количество повторов в качестве ключей, а
+# буквы — в качестве значений, добавляя их в список для хранения.
 
 
+""" my_stroke = input("Введите текст: ")
 
+origin_dict = {}
+
+for char in my_stroke:
+    if char in origin_dict:
+        origin_dict[char] += 1
+    else:
+        origin_dict[char] = 1
+for i_sym in sorted(origin_dict.keys()):
+    print(i_sym, ':', origin_dict[i_sym])
+
+def invert(my_dict):
+    result = {}
+    for key in my_dict:
+        value = my_dict[key]
+        if value not in result:
+            result[value] = [key]
+        else:
+            result[value].append(key)
+    return result
+
+result_dict = invert(origin_dict)
+for i_sym in sorted(result_dict.keys()):
+    print(i_sym, ':', result_dict[i_sym]) """
 
